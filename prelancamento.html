@@ -124,5 +124,7 @@ footer{padding:40px 0;border-top:1px solid var(--line);font-size:14px;color:var(
   // origem da visita (ex.: ?origem=instagram) para medir qual canal trouxe interessados; nenhum dado pessoal
   try { var o = new URLSearchParams(location.search).get("origem"); if (o) document.getElementById("origem").value = o.replace(/[^a-z0-9_-]/gi, "").slice(0, 40); } catch (e) {}
 </script>
+<script>/* contagem agregada de visitas por página e origem: sem cookies, sem IP, sem dados pessoais */
+try{var o=(new URLSearchParams(location.search).get("origem")||"").replace(/[^a-z0-9_-]/gi,"").slice(0,40);fetch("https://vendaclara-vendas.vendaclara.workers.dev/v?p=prelancamento&o="+encodeURIComponent(o),{mode:"no-cors",keepalive:true});}catch(e){}</script>
 </body>
 </html>
