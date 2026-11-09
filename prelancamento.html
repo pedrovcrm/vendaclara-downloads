@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VendaClara · lista de interessados</title>
+<meta name="description" content="Assistente de rentabilidade para vendedores do Mercado Livre. Entre na lista para o teste beta e o preço de lançamento.">
+<style>
+:root{--fg:#14171f;--fg2:#4a5160;--fg3:#6b7280;--line:#e3e6ec;--bg:#f6f7f9;--brand:#1a5cff;--brand2:#e8efff;--ok:#127a4a;--okbg:#e6f5ee;--warn:#9a5b00;--warnbg:#fff4e0}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font:17px/1.6 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:#fff;-webkit-font-smoothing:antialiased}
+a{color:var(--brand)}img{max-width:100%;display:block}
+.w{max-width:1120px;margin:0 auto;padding:0 24px}
+header.top{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:5}
+header.top .w{display:flex;align-items:center;gap:18px;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:750;font-size:19px;color:var(--fg);text-decoration:none}
+.logo i{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,#1a5cff,#5aa2ff);display:grid;place-items:center;color:#fff;font-style:normal;font-size:14px}
+nav.m{margin-left:auto;display:flex;gap:22px;font-size:15px}nav.m a{color:var(--fg2);text-decoration:none}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:#fff;font-weight:650;text-decoration:none;padding:13px 22px;border-radius:10px;font-size:16px;border:1px solid var(--brand)}
+.btn:hover{filter:brightness(1.07)}.btn.sec{background:#fff;color:var(--fg);border-color:#cfd4dd}.btn.peq{padding:8px 14px;font-size:14.5px}
+.hero{padding:72px 0 40px;background:linear-gradient(180deg,#f3f6ff 0%,#fff 100%)}
+.hero h1{font-size:48px;line-height:1.1;letter-spacing:-.025em;margin:0 0 18px;max-width:820px}
+.hero p.l{font-size:20px;color:var(--fg2);max-width:720px;margin:0 0 28px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.nota{font-size:14px;color:var(--fg3);margin-top:12px}
+.shot{margin:44px 0 0;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 20px 50px rgba(20,30,60,.12)}
+.shot figcaption,.cap{font-size:13.5px;color:var(--fg3);padding:10px 14px;background:#fafbfc;border-top:1px solid var(--line)}
+section{padding:72px 0}section.alt{background:var(--bg)}
+h2{font-size:34px;line-height:1.2;letter-spacing:-.02em;margin:0 0 14px}h3{font-size:19px;margin:0 0 6px}
+.sub{color:var(--fg2);font-size:18px;max-width:760px;margin:0 0 36px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.g2{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px}
+.card p{margin:0;color:var(--fg2);font-size:16px}
+.num{font-size:13px;font-weight:700;color:var(--brand);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.cl{display:inline-block;font-size:13px;font-weight:700;border-radius:6px;padding:2px 9px;margin-bottom:10px}
+.cl.m{background:#e6f5ee;color:#0b5c37}.cl.e{background:#e8efff;color:#1747c2}.cl.h{background:#f1f2f5;color:#5b6272;border:1px dashed #c4c9d3}
+ul.ok{list-style:none;padding:0;margin:0}ul.ok li{padding:7px 0 7px 30px;position:relative;color:var(--fg2)}ul.ok li:before{content:"✓";position:absolute;left:4px;color:var(--ok);font-weight:800}
+ul.nao li:before{content:"–";color:var(--fg3)}
+.preco{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:stretch}
+.box{border:2px solid var(--brand);border-radius:16px;padding:32px;background:#fff}
+.valor{font-size:56px;font-weight:800;letter-spacing:-.03em;line-height:1}.valor small{font-size:18px;font-weight:600;color:var(--fg3);letter-spacing:0}
+.comp{border:1px solid var(--line);border-radius:16px;padding:28px;background:var(--bg)}
+.comp table{width:100%;border-collapse:collapse;font-size:15.5px}.comp td{padding:10px 0;border-bottom:1px solid var(--line)}.comp td:last-child{text-align:right;font-weight:650;font-variant-numeric:tabular-nums}
+details{border-bottom:1px solid var(--line);padding:16px 0}summary{cursor:pointer;font-weight:650;font-size:17px}details p{color:var(--fg2);margin:10px 0 0}
+footer{padding:40px 0;border-top:1px solid var(--line);font-size:14px;color:var(--fg3)}footer .w{display:flex;gap:24px;flex-wrap:wrap}
+.selo{display:inline-flex;gap:8px;align-items:center;background:var(--okbg);color:var(--ok);font-weight:650;font-size:14px;border-radius:20px;padding:5px 12px;margin-bottom:18px}
+@media(max-width:860px){.hero h1{font-size:34px}.g3,.g2,.preco{grid-template-columns:1fr}nav.m{display:none}h2{font-size:27px}section{padding:52px 0}}
+</style>
+<style>
+.form{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:0 16px 40px rgba(20,30,60,.08)}
+.form label{display:block;font-weight:600;font-size:15px;margin:14px 0 6px}.form label.op{font-weight:400;display:flex;gap:10px;align-items:flex-start;margin:8px 0}
+.form input[type=text],.form input[type=email],.form select{width:100%;font:inherit;padding:11px 12px;border:1px solid #cfd4dd;border-radius:10px;background:#fff}
+.form .opcoes{display:flex;flex-wrap:wrap;gap:6px 18px}.form .opcoes label{font-weight:400;margin:4px 0;display:flex;gap:6px;align-items:center}
+.form .consent{background:var(--bg);border-radius:10px;padding:12px 14px;font-size:14.5px;color:var(--fg2)}
+.form button{margin-top:18px;width:100%;justify-content:center;cursor:pointer}
+.isca{position:absolute;left:-5000px;width:1px;height:1px;overflow:hidden}
+.passos{counter-reset:p;list-style:none;padding:0;margin:0}.passos li{counter-increment:p;padding:10px 0 10px 44px;position:relative;color:var(--fg2)}
+.passos li:before{content:counter(p);position:absolute;left:0;top:8px;width:30px;height:30px;border-radius:50%;background:var(--brand2);color:var(--brand);font-weight:800;display:grid;place-items:center}
+</style>
+</head>
+<body>
+<header class="top"><div class="w">
+  <a class="logo" href="#"><i>◆</i>VendaClara</a>
+  <nav class="m"><a href="#o-que">O que faz</a><a href="#lista">Entrar na lista</a></nav>
+</div></header>
+
+<div class="hero"><div class="w g2">
+  <div>
+    <span class="selo">Em breve · teste beta com vagas limitadas</span>
+    <h1>Saiba quanto sobra de verdade em cada venda no Mercado Livre.</h1>
+    <p class="l">O VendaClara desconta comissão, frete, impostos, publicidade, devoluções e o custo do produto de cada pedido e mostra o lucro do mês, anúncio por anúncio. Ele separa o que é <b>medido</b> do que é <b>estimado</b>.</p>
+    <p class="nota">Programa para Windows, só leitura: não mexe nos seus anúncios. Pagamento único, sem mensalidade.</p>
+  </div>
+  <form class="form" id="lista" method="post" action="https://vendaclara-vendas.vendaclara.workers.dev/interesse">
+    <h3 style="margin:0">Entre na lista</h3>
+    <p style="margin:6px 0 0;color:var(--fg2);font-size:15px">Avisamos quando abrir e convidamos para o beta quem marcar.</p>
+    <label for="nome">Nome (opcional)</label><input type="text" id="nome" name="nome" maxlength="80" autocomplete="name">
+    <label for="email">E-mail</label><input type="email" id="email" name="email" required maxlength="250" autocomplete="email">
+    <label for="perfil">Você…</label>
+    <select id="perfil" name="perfil"><option value="">Escolha</option><option value="fabrica">fabrica o que vende (3D, artesanato, confecção…)</option><option value="revende">revende produtos</option><option value="outro">outro</option></select>
+    <label for="vendas">Vendas por mês, aproximadamente</label>
+    <select id="vendas" name="vendas"><option value="">Escolha</option><option value="ate10">até 10</option><option value="10a50">10 a 50</option><option value="50a200">50 a 200</option><option value="mais200">mais de 200</option></select>
+    <label>Onde você vende</label>
+    <div class="opcoes"><label><input type="checkbox" name="canal" value="mercadolivre"> Mercado Livre</label><label><input type="checkbox" name="canal" value="shopee"> Shopee</label>
+      <label><input type="checkbox" name="canal" value="amazon"> Amazon</label><label><input type="checkbox" name="canal" value="magalu"> Magalu</label>
+      <label><input type="checkbox" name="canal" value="tiktok"> TikTok Shop</label><label><input type="checkbox" name="canal" value="outros"> outros</label></div>
+    <label class="op"><input type="checkbox" name="beta" value="sim"> Quero participar do teste beta (vagas limitadas; 3 conversas curtas em 3 semanas)</label>
+    <div class="isca" aria-hidden="true"><label for="site">Não preencha</label><input type="text" id="site" name="site" tabindex="-1" autocomplete="off"></div>
+    <input type="hidden" name="origem" id="origem" value="">
+    <label class="op consent"><input type="checkbox" name="consentimento" value="sim" required> <span>Autorizo o VendaClara a guardar meu nome, e-mail e as respostas deste formulário para me avisar do lançamento e me convidar para o teste beta. Posso sair da lista a qualquer momento. <a href="privacidade.html">Privacidade</a></span></label>
+    <button class="btn" type="submit">Quero ser avisado</button>
+    <p class="nota">Sem spam. Para sair: <a href="https://vendaclara-vendas.vendaclara.workers.dev/interesse/sair">vendaclara-vendas…/interesse/sair</a></p>
+  </form>
+</div></div>
+
+<section id="o-que"><div class="w">
+  <h2>Três perguntas que a planilha não responde sozinha</h2>
+  <div class="g3">
+    <div class="card"><div class="num">1 · Lucro real</div><h3>Quais anúncios dão prejuízo?</h3><p>Lucro de cada venda com a tarifa e o frete que o Mercado Livre de fato cobrou, e com os custos que você informa.</p></div>
+    <div class="card"><div class="num">2 · Resultado do mês</div><h3>Quanto sobrou este mês?</h3><p>Vendas, devoluções, comissão, frete, impostos, publicidade e custos fixos, mês a mês. Cada linha mostra se o valor é real, informado ou estimado.</p></div>
+    <div class="card"><div class="num">3 · Prioridades</div><h3>O que fazer primeiro?</h3><p>Uma lista curta, com a conta e a premissa à vista. Depois que você age, o VendaClara mede o antes e o depois.</p></div>
+  </div>
+  <figure class="shot"><img src="img/resultado.jpg" alt="Tela Resultado do mês do VendaClara com vendas, custos por origem e lucro mês a mês" width="1600" height="1025">
+    <figcaption>Resultado do mês com uma loja de demonstração. Os dados da imagem são fictícios.</figcaption></figure>
+</div></section>
+
+<section class="alt"><div class="w g2">
+  <div>
+    <h2>Como funciona o beta</h2>
+    <ol class="passos">
+      <li>Você recebe o convite e instala no Windows. Conectar o Mercado Livre leva 2 cliques.</li>
+      <li>Usa 14 dias grátis com a sua própria loja, sem cartão.</li>
+      <li>Conversamos 3 vezes, por pouco tempo: no começo, no dia 7 e no fim. O que você disser decide o que muda.</li>
+      <li>No lançamento, quem participou recebe o preço de lançamento.</li>
+    </ol>
+  </div>
+  <figure class="shot" style="margin:0"><img src="img/valor.jpg" alt="Relatório de valor do VendaClara separando perdas medidas e oportunidades estimadas" width="1600" height="1025">
+    <figcaption>Relatório de valor: o que foi medido fica separado do que é estimado. Loja de demonstração.</figcaption></figure>
+</div></section>
+
+<footer><div class="w">
+  <span>VendaClara · Pedro Vitor Cordeiro Roque de Melo · vendaclara4@gmail.com · <a href="termos.html">dados completos do vendedor</a></span><a href="privacidade.html">Privacidade</a>
+  <span>VendaClara não é afiliado ao Mercado Livre. Mercado Livre é marca de seus titulares.</span>
+</div></footer>
+<script>
+  // origem da visita (ex.: ?origem=instagram) para medir qual canal trouxe interessados; nenhum dado pessoal
+  try { var o = new URLSearchParams(location.search).get("origem"); if (o) document.getElementById("origem").value = o.replace(/[^a-z0-9_-]/gi, "").slice(0, 40); } catch (e) {}
+</script>
+</body>
+</html>

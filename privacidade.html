@@ -1,0 +1,103 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Política de privacidade · VendaClara</title><meta name="robots" content="index"><style>body{font:16px/1.6 Inter,system-ui,"Segoe UI",Roboto,sans-serif;color:#1d2433;max-width:820px;margin:0 auto;padding:32px 20px 60px}
+a{color:#2457e6}h1{font-size:30px;line-height:1.2}h2{margin-top:32px;font-size:21px}table{border-collapse:collapse;width:100%;margin:14px 0}
+td,th{border-bottom:1px solid #e3e7ef;padding:8px 6px;text-align:left;vertical-align:top}blockquote{margin:0;padding:12px 16px;background:#fff6e0;border-radius:8px}
+.topo{margin-bottom:24px;font-weight:700}.topo a{text-decoration:none;color:#1d2433}.rodape{margin-top:48px;color:#6b7385;font-size:14px}</style></head><body><div class="topo"><a href="index.html">◆ VendaClara</a></div><h1>Política de Privacidade do VendaClara</h1>
+<p>Última atualização: 07/11/2026</p>
+<h2>1. Resumo</h2>
+<ul>
+<li>O VendaClara roda <strong>no seu computador</strong>. Anúncios, vendas, custos e o acesso ao Mercado Livre ficam guardados <strong>no seu computador</strong>, cifrados.</li>
+<li><strong>Não recebemos</strong> seus dados de vendas, custos ou anúncios. Não temos servidor que guarde essas informações.</li>
+<li>Dados de <strong>compradores</strong> (nome, apelido, endereço, documento) são <strong>descartados</strong> antes de gravar. Ficam só número do pedido, item, quantidade, valor e data.</li>
+<li>Na compra da licença, o Mercado Pago nos informa nome, e-mail e dados do pagamento, usados para emitir a licença, cumprir obrigações fiscais e prestar suporte.</li>
+</ul>
+<h2>2. Controlador</h2>
+<p><strong>Pedro Vitor Cordeiro Roque de Melo</strong>, <strong>CPF 044.445.711-95</strong>, e-mail <strong>vendaclara4@gmail.com</strong>. Encarregado (DPO): <strong>o próprio titular, pelo e-mail acima</strong>.</p>
+<h2>3. Quais dados, onde e para quê</h2>
+<table>
+<thead>
+<tr>
+<th>Dado</th>
+<th>Onde fica</th>
+<th>Finalidade</th>
+<th>Base legal (LGPD)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anúncios, visitas, pedidos (sem dados do comprador), tarifas e frete do Mercado Livre</td>
+<td>Computador do usuário</td>
+<td>Calcular lucro, recomendações e alertas</td>
+<td>O usuário trata os próprios dados; o VendaClara é ferramenta local.</td>
+</tr>
+<tr>
+<td>Custos, impostos e preferências informados</td>
+<td>Computador do usuário</td>
+<td>Mesmo acima</td>
+<td>Idem</td>
+</tr>
+<tr>
+<td>Autorização de acesso ao Mercado Livre (token)</td>
+<td>Computador do usuário, cifrado</td>
+<td>Atualizar os dados</td>
+<td>Idem</td>
+</tr>
+<tr>
+<td>E-mail e senha do VendaClara</td>
+<td>Computador do usuário (senha só como hash)</td>
+<td>Proteger o acesso local</td>
+<td>Idem</td>
+</tr>
+<tr>
+<td>Código de autorização e tokens durante a conexão</td>
+<td>Passam pelo nosso intermediário de conexão (Cloudflare), <strong>sem gravação</strong></td>
+<td>Trocar o código pelo acesso sem expor a chave secreta do aplicativo</td>
+<td>Execução de contrato (art. 7º, V)</td>
+</tr>
+<tr>
+<td>Identificador da licença + <strong>resumo criptográfico (SHA-256)</strong> do id da conta do Mercado Livre — o id real não sai do computador</td>
+<td>Nosso servidor de licenças (Cloudflare KV)</td>
+<td>Garantir 1 licença por conta do ML e permitir troca de computador sem suporte</td>
+<td>Execução de contrato (art. 7º, V)</td>
+</tr>
+<tr>
+<td>Nome, e-mail e dados do pagamento da licença</td>
+<td>Mercado Pago; consultados pelo nosso emissor de licença para emitir a chave e, no máximo uma vez por dia, para saber se o pagamento foi devolvido (guardamos só "devolvido" ou "ok" por 24 horas)</td>
+<td>Emitir licença, revogar licença reembolsada, suporte, obrigações fiscais</td>
+<td>Execução de contrato e obrigação legal (art. 7º, II e V)</td>
+</tr>
+<tr>
+<td>Pedido de arrependimento: número do pagamento, data e hora</td>
+<td>Nosso servidor de licenças</td>
+<td>Comprovar o pedido e fazer a devolução</td>
+<td>Obrigação legal (art. 7º, II) e execução de contrato</td>
+</tr>
+<tr>
+<td>Lista de interessados (pré-lançamento): nome, e-mail, perfil, faixa de vendas, canais, interesse no beta, origem da visita, data e texto do consentimento</td>
+<td>Nosso servidor (Cloudflare KV); o endereço IP não é guardado</td>
+<td>Avisar do lançamento e convidar para o beta</td>
+<td>Consentimento (art. 7º, I), revogável a qualquer momento em /interesse/sair</td>
+</tr>
+<tr>
+<td>E-mails de suporte</td>
+<td>Caixa de e-mail Google (Gmail)</td>
+<td>Atendimento</td>
+<td>Execução de contrato</td>
+</tr>
+</tbody>
+</table>
+<p>O VendaClara também acessa, sem enviar dados da loja: notícias públicas (Google Notícias) e um arquivo público para saber se há nova versão.</p>
+<h2>4. Compartilhamento</h2>
+<ul>
+<li><strong>Mercado Livre:</strong> o programa conversa com a API oficial em nome do usuário, com a autorização que ele concede.</li>
+<li><strong>Mercado Pago:</strong> processa o pagamento da licença.</li>
+<li><strong>Cloudflare:</strong> hospeda o intermediário de conexão (não grava dados) e o emissor de licença, que guarda apenas o identificador da licença, o resumo criptográfico da conta vinculada, o registro de início do teste grátis (também como resumo criptográfico), os pedidos de arrependimento (número do pagamento e data) e eventuais revogações. Os registros técnicos da própria Cloudflare seguem a política dela.</li>
+<li>Não vendemos nem cedemos dados.</li>
+</ul>
+<h2>5. Segurança</h2>
+<p>Senha local com PBKDF2-SHA256 (310 mil iterações) e bloqueio após tentativas erradas; tokens cifrados com chave guardada pelo sistema operacional (DPAPI no Windows); programa acessível só pelo próprio computador (127.0.0.1); proteção contra requisições de outros sites; registros sem senhas nem tokens.</p>
+<h2>6. Seus direitos</h2>
+<p>Como os dados da loja ficam no seu computador, você mesmo pode <strong>exportá-los</strong> (Configurações → Dados → Exportar) e <strong>excluí-los</strong> (Configurações → Dados → Excluir). Também pode revogar o acesso do VendaClara no Mercado Livre a qualquer momento. Para dados de compra e suporte que estão conosco, escreva para vendaclara4@gmail.com: atenderemos confirmação, acesso, correção, eliminação e demais direitos do art. 18 da LGPD.</p>
+<h2>7. Retenção</h2>
+<p>Dados locais: até você excluir. Lista de interessados: até você sair da lista ou até 12 meses depois do lançamento, o que vier primeiro. Dados de compra: pelo prazo exigido pela legislação fiscal. E-mails de suporte: 12 meses.</p>
+<h2>8. Alterações</h2>
+<p>Avisaremos mudanças relevantes na página do produto e no próprio programa.</p><p class="rodape">Pedro Vitor Cordeiro Roque de Melo · CPF 044.445.711-95 · QNA, 36, Taguatinga Norte, Brasilia/DF, 72.110-360 · vendaclara4@gmail.com</p></body></html>
