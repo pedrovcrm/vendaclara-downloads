@@ -4,15 +4,16 @@
 // Ponte temporária: entrega imagens deste site para a aba da Business Suite que abriu esta janela (postMessage com origem fixa).
 (async () => {
   const destino = "https://business.facebook.com";
-  if (!window.opener) { document.body.textContent = "Abra esta página pela Business Suite."; return; }
+  const alvo = window.opener || (window.parent !== window ? window.parent : null);
+  if (!alvo) { document.body.textContent = "Abra esta página pela Business Suite."; return; }
   const nomes = decodeURIComponent(location.hash.slice(1)).split(",").filter((n) => /^[a-z0-9_]+\.(jpg|png)$/.test(n));
   for (const n of nomes) {
     const r = await fetch("midia/" + n, { cache: "no-store" });
-    if (!r.ok) { window.opener.postMessage({ erro: n }, destino); continue; }
+    if (!r.ok) { alvo.postMessage({ erro: n }, destino); continue; }
     const b = await r.arrayBuffer();
-    window.opener.postMessage({ nome: n, tipo: n.endsWith(".png") ? "image/png" : "image/jpeg", dados: b }, destino, [b]);
+    alvo.postMessage({ nome: n, tipo: n.endsWith(".png") ? "image/png" : "image/jpeg", dados: b }, destino, [b]);
   }
-  window.opener.postMessage({ fim: true }, destino);
-  setTimeout(() => window.close(), 300);
+  alvo.postMessage({ fim: true }, destino);
+  if (window.opener) setTimeout(() => window.close(), 300);
 })();
 </script>
