@@ -139,6 +139,8 @@ footer{padding:40px 0;border-top:1px solid var(--line);font-size:14px;color:var(
   <span>VendaClara não é afiliado ao Mercado Livre. Mercado Livre é marca de seus titulares.</span>
 </div></footer>
 <script>/* contagem agregada de visitas por página e origem: sem cookies, sem IP, sem dados pessoais */
-try{var o=(new URLSearchParams(location.search).get("origem")||"").replace(/[^a-z0-9_-]/gi,"").slice(0,40);fetch("https://vendaclara-vendas.vendaclara.workers.dev/v?p=inicio&o="+encodeURIComponent(o),{mode:"no-cors",keepalive:true});}catch(e){}</script>
+try{var o=(new URLSearchParams(location.search).get("origem")||"").replace(/[^a-z0-9_-]/gi,"").slice(0,40);fetch("https://vendaclara-vendas.vendaclara.workers.dev/v?p=inicio&o="+encodeURIComponent(o),{mode:"no-cors",keepalive:true});
+/* a origem da visita segue para o download e para a lista de lançamento (ex.: instagram) */
+if(o){document.querySelectorAll('a[href*="/baixar?o="]').forEach(function(a){a.href=a.href.replace(/([?&]o=)[^&]*/,"$1"+encodeURIComponent(o));});document.querySelectorAll('a[href*="prelancamento.html"]').forEach(function(a){a.href=a.href.replace(/origem=[^&]*/,"origem="+encodeURIComponent(o));});}}catch(e){}</script>
 </body>
 </html>
