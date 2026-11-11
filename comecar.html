@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>VendaClara · começar no beta</title>
+<style>
+:root{--fg:#14171f;--fg2:#4a5160;--fg3:#6b7280;--line:#e3e6ec;--bg:#f6f7f9;--brand:#1a5cff;--brand2:#e8efff;--ok:#127a4a;--okbg:#e6f5ee;--warn:#9a5b00;--warnbg:#fff4e0}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font:17px/1.6 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:#fff;-webkit-font-smoothing:antialiased}
+a{color:var(--brand)}img{max-width:100%;display:block}
+.w{max-width:1120px;margin:0 auto;padding:0 24px}
+header.top{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:5}
+header.top .w{display:flex;align-items:center;gap:18px;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:750;font-size:19px;color:var(--fg);text-decoration:none}
+.logo i{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,#1a5cff,#5aa2ff);display:grid;place-items:center;color:#fff;font-style:normal;font-size:14px}
+nav.m{margin-left:auto;display:flex;gap:22px;font-size:15px}nav.m a{color:var(--fg2);text-decoration:none}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:#fff;font-weight:650;text-decoration:none;padding:13px 22px;border-radius:10px;font-size:16px;border:1px solid var(--brand)}
+.btn:hover{filter:brightness(1.07)}.btn.sec{background:#fff;color:var(--fg);border-color:#cfd4dd}.btn.peq{padding:8px 14px;font-size:14.5px}
+.hero{padding:72px 0 40px;background:linear-gradient(180deg,#f3f6ff 0%,#fff 100%)}
+.hero h1{font-size:48px;line-height:1.1;letter-spacing:-.025em;margin:0 0 18px;max-width:820px}
+.hero p.l{font-size:20px;color:var(--fg2);max-width:720px;margin:0 0 28px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.nota{font-size:14px;color:var(--fg3);margin-top:12px}
+.shot{margin:44px 0 0;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 20px 50px rgba(20,30,60,.12)}
+.shot figcaption,.cap{font-size:13.5px;color:var(--fg3);padding:10px 14px;background:#fafbfc;border-top:1px solid var(--line)}
+section{padding:72px 0}section.alt{background:var(--bg)}
+h2{font-size:34px;line-height:1.2;letter-spacing:-.02em;margin:0 0 14px}h3{font-size:19px;margin:0 0 6px}
+.sub{color:var(--fg2);font-size:18px;max-width:760px;margin:0 0 36px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.g2{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px}
+.card p{margin:0;color:var(--fg2);font-size:16px}
+.num{font-size:13px;font-weight:700;color:var(--brand);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.cl{display:inline-block;font-size:13px;font-weight:700;border-radius:6px;padding:2px 9px;margin-bottom:10px}
+.cl.m{background:#e6f5ee;color:#0b5c37}.cl.e{background:#e8efff;color:#1747c2}.cl.h{background:#f1f2f5;color:#5b6272;border:1px dashed #c4c9d3}
+ul.ok{list-style:none;padding:0;margin:0}ul.ok li{padding:7px 0 7px 30px;position:relative;color:var(--fg2)}ul.ok li:before{content:"✓";position:absolute;left:4px;color:var(--ok);font-weight:800}
+ul.nao li:before{content:"–";color:var(--fg3)}
+.preco{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:stretch}
+.box{border:2px solid var(--brand);border-radius:16px;padding:32px;background:#fff}
+.valor{font-size:56px;font-weight:800;letter-spacing:-.03em;line-height:1}.valor small{font-size:18px;font-weight:600;color:var(--fg3);letter-spacing:0}
+.comp{border:1px solid var(--line);border-radius:16px;padding:28px;background:var(--bg)}
+.comp table{width:100%;border-collapse:collapse;font-size:15.5px}.comp td{padding:10px 0;border-bottom:1px solid var(--line)}.comp td:last-child{text-align:right;font-weight:650;font-variant-numeric:tabular-nums}
+details{border-bottom:1px solid var(--line);padding:16px 0}summary{cursor:pointer;font-weight:650;font-size:17px}details p{color:var(--fg2);margin:10px 0 0}
+footer{padding:40px 0;border-top:1px solid var(--line);font-size:14px;color:var(--fg3)}footer .w{display:flex;gap:24px;flex-wrap:wrap}
+.selo{display:inline-flex;gap:8px;align-items:center;background:var(--okbg);color:var(--ok);font-weight:650;font-size:14px;border-radius:20px;padding:5px 12px;margin-bottom:18px}
+@media(max-width:860px){.hero h1{font-size:34px}.g3,.g2,.preco{grid-template-columns:1fr}nav.m{display:none}h2{font-size:27px}section{padding:52px 0}}
+</style>
+<style>
+.cx{max-width:860px;margin:0 auto;padding:28px 20px 60px}
+.cx h1{font-size:34px;margin:10px 0 6px}.cx h2{font-size:24px;margin:34px 0 8px}
+.cx video{width:100%;height:auto;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.12);background:#0b142c}
+.cx .nota{background:var(--bg);border-radius:12px;padding:14px 16px;color:var(--fg2);font-size:15.5px}
+.cx code{background:#f1f3f7;padding:2px 6px;border-radius:6px;word-break:break-all}
+.cx ol li,.cx ul li{margin:6px 0}
+</style>
+</head>
+<body>
+<div class="cx">
+<p><a href="index.html">◆ VendaClara</a> · beta</p>
+<h1>Começar no beta, sem precisar de reunião</h1>
+<p>Três vídeos curtos, sem som (legendas na tela). As telas usam uma loja com dados fictícios.</p>
+
+<h2>1. Como instalar no Windows (1 min)</h2>
+<video controls preload="none" playsinline poster="img/tutorial-1-capa.jpg"><source src="img/tutorial-1-instalacao.mp4" type="video/mp4"></video>
+<ol>
+<li>Baixe o instalador <b>só pela página do beta</b> que você recebeu.</li>
+<li>Confira o arquivo: no PowerShell, rode <code>Get-FileHash "$env:USERPROFILE\Downloads\NOME-DO-ARQUIVO.exe"</code> e compare o "Hash" com o código de conferência da página do beta.</li>
+<li>O instalador do beta ainda não tem assinatura digital de editor, então o Windows pode mostrar "Editor desconhecido". <b>Só se o código conferiu</b>: "Mais informações" → "Executar assim mesmo". Código diferente ou antivírus bloqueando: não instale e fale com a gente. Nunca desative o antivírus.</li>
+<li>Crie a senha do aplicativo. Ela fica só no seu computador e não é a senha do Mercado Livre.</li>
+</ol>
+
+<h2>2. Primeiros passos: conectar, custos e conferência (1,5 min)</h2>
+<video controls preload="none" playsinline poster="img/tutorial-2-capa.jpg"><source src="img/tutorial-2-primeiros-passos.mp4" type="video/mp4"></video>
+<div class="nota">
+<p><b>Sobre a autorização do Mercado Livre:</b> você entra no site oficial do Mercado Livre; o VendaClara não vê nem guarda sua senha. A permissão "Usuários" aparece como "leitura e escrita" porque o Mercado Livre não oferece opção só de leitura para ela. O VendaClara só lê: não altera preços, anúncios, estoque nem campanhas. Para desconectar: Mercado Livre → Minha conta → Segurança → Aplicativos conectados.</p>
+<p style="margin-bottom:0"><b>De onde vem cada número:</b> preço, comissão (tarifa) e frete vêm do Mercado Livre. Custo do produto, embalagem e imposto vêm do que você informa. O lucro é um cálculo do VendaClara com esses dados, não um valor oficial do Mercado Livre. Por isso pedimos a conferência.</p>
+</div>
+
+<h2>3. O VendaClara em 1 minuto</h2>
+<video controls preload="none" playsinline poster="img/demo-capa.jpg"><source src="img/vendaclara-demo.mp4" type="video/mp4"></video>
+
+<h2 id="conferir">Conferência: 5 pedidos</h2>
+<ol>
+<li>No VendaClara, abra <b>Resultado do mês</b> e baixe <b>Pedidos, um a um (CSV)</b>.</li>
+<li>Escolha 5 pedidos, de preferência de anúncios diferentes.</li>
+<li>No Mercado Livre, abra cada venda e compare <b>preço, comissão (tarifa) e frete</b>.</li>
+</ol>
+
+<h2 id="divergencia">Encontrou diferença? Conte pra gente</h2>
+<p>Mande por e-mail ou pelo Direct do Instagram:</p>
+<ul>
+<li>número do pedido;</li>
+<li>qual valor (preço, comissão, frete, devolução, outro);</li>
+<li>valor no VendaClara e valor no Mercado Livre;</li>
+<li>se puder, print das duas telas, <b>sem dados de clientes</b> (nome, CPF, endereço).</li>
+</ul>
+<p><a class="btn" href="mailto:vendaclara4@gmail.com?subject=Beta%20VendaClara%20%E2%80%94%20diverg%C3%AAncia%20no%20pedido%20&amp;body=N%C3%BAmero%20do%20pedido%3A%0AQual%20valor%20(pre%C3%A7o%2C%20comiss%C3%A3o%2C%20frete%2C%20devolu%C3%A7%C3%A3o%2C%20outro)%3A%0AValor%20no%20VendaClara%3A%0AValor%20no%20Mercado%20Livre%3A%0AVers%C3%A3o%20do%20VendaClara%20(rodap%C3%A9%20do%20menu)%3A%0AObserva%C3%A7%C3%B5es%3A%0A">Relatar por e-mail</a>
+&nbsp; <a href="https://ig.me/m/vendaclara.app">ou pelo Direct @vendaclara.app</a></p>
+<p class="nota">Atendimento por mensagem: vendaclara4@gmail.com e Direct do Instagram. Respondemos em dias úteis.</p>
+</div>
+</body>
+</html>
