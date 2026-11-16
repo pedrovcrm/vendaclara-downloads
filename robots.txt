@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /beta/
+Disallow: /comecar.html
+Sitemap: https://www.vendaclara.workers.dev/sitemap.xml
