@@ -90,6 +90,9 @@ p.sub{color:var(--fg2);font-size:18px;max-width:760px;margin:0}
       <div class="campo"><label for="imposto">Imposto sobre a venda (%)<small>a alíquota do seu regime; confirme com o contador</small></label><div class="in"><input id="imposto" inputmode="decimal" value="" placeholder="ex.: 6"><span>%</span></div></div>
       <div class="campo"><label for="outros">Embalagem e outros custos<small>opcional</small></label><div class="in"><span>R$</span><input id="outros" inputmode="decimal" value="0"></div></div>
       <div class="campo"><label for="ads">Publicidade (% do preço)<small>opcional, se você anuncia</small></label><div class="in"><input id="ads" inputmode="decimal" value="0"><span>%</span></div></div>
+      <h2 style="margin-top:22px">Simulações extras <small style="font-weight:400;color:var(--fg3);font-size:14px">(opcional)</small></h2>
+      <div class="campo"><label for="meta">Margem que você quer (%)<small>mostra o preço necessário para chegar nela</small></label><div class="in"><input id="meta" inputmode="decimal" value="" placeholder="ex.: 15"><span>%</span></div></div>
+      <div class="campo"><label for="tarifa2">Comparar com outra tarifa (%)<small>por exemplo, a do Premium do seu anúncio</small></label><div class="in"><input id="tarifa2" inputmode="decimal" value="" placeholder="ex.: 19"><span>%</span></div></div>
     </div>
 
     <div class="cx res" aria-live="polite">
@@ -103,6 +106,8 @@ p.sub{color:var(--fg2);font-size:18px;max-width:760px;margin:0}
       <div class="linha tot"><span>Sobra por venda</span><b id="r-lucro"></b></div>
       <div class="big" id="r-margem"></div>
       <div class="linha"><span>Preço mínimo sem prejuízo</span><b id="r-minimo"></b></div>
+      <div class="linha" id="l-meta" hidden><span id="t-meta">Preço para a margem que você quer</span><b id="r-meta"></b></div>
+      <div class="linha" id="l-t2" hidden><span id="t-t2">Com a outra tarifa, sobra</span><b id="r-t2"></b></div>
       <div class="aviso"><b>É uma simulação.</b> A tarifa e o imposto são os que <b>você</b> informa: a calculadora não consulta o Mercado Livre e não usa valores oficiais. Confira sempre a tarifa e o frete reais de cada venda no Mercado Livre e o imposto com o seu contador.</div>
     </div>
   </div>
@@ -111,6 +116,8 @@ p.sub{color:var(--fg2);font-size:18px;max-width:760px;margin:0}
     <h2>Quer essa conta com os seus pedidos reais?</h2>
     <p>O VendaClara é um programa para Windows que lê suas vendas pela integração oficial do Mercado Livre e mostra quanto sobrou em cada pedido e em cada anúncio, com a tarifa e o frete de cada venda. Ele só lê os dados: não altera anúncios, preços nem estoque. Está em <b>beta gratuito</b>, e o que mais nos ajuda é você conferir se as contas batem com os seus números.</p>
     <a class="btn" id="cta-beta" href="prelancamento.html?origem=calculadora">Quero participar do beta</a>
+    <p style="margin-top:18px"><b>Planilha grátis:</b> confira 5 pedidos reais e veja se o que o ML repassou bate com a conta. <a id="dl-planilha" href="img/conferir-5-pedidos-mercado-livre.xlsx" download>Baixar a planilha (Excel)</a></p>
+    <p class="nota">Dicas de margem toda semana no Instagram: <a href="https://www.instagram.com/vendaclara.app/" rel="noopener">@vendaclara.app</a></p>
     <p class="nota" style="margin-top:14px">Entenda a conta: <a href="lucro-por-venda-mercado-livre.html">como calcular o lucro de uma venda</a> · <a href="tarifas-e-frete-margem-mercado-livre.html">tarifas e frete</a> · <a href="vendas-com-prejuizo-mercado-livre.html">vendas com prejuízo</a></p>
   </section>
 </main>
@@ -122,7 +129,7 @@ p.sub{color:var(--fg2);font-size:18px;max-width:760px;margin:0}
 
 <script>
 (function(){
-  var ids=["preco","custo","tarifa","fixa","frete","imposto","outros","ads"];
+  var ids=["preco","custo","tarifa","fixa","frete","imposto","outros","ads","meta","tarifa2"];
   function num(id){var v=(document.getElementById(id).value||"").trim().replace(/\s/g,"");if(v.indexOf(",")>=0)v=v.replace(/\./g,"").replace(",",".");var n=parseFloat(v);return isFinite(n)?n:0;}
   function brl(v){return (v<0?"− ":"")+"R$ "+Math.abs(v).toFixed(2).replace(".",",").replace(/\B(?=(\d{3})+(?!\d))/g,".");}
   function set(id,t,c){var e=document.getElementById(id);e.textContent=t;e.className=c||"";}
@@ -134,6 +141,11 @@ p.sub{color:var(--fg2);font-size:18px;max-width:760px;margin:0}
     set("r-margem",p>0?(l/p*100).toFixed(1).replace(".",",")+"% do preço":"—",l<0?"big neg":"big pos");
     if(!document.getElementById("tarifa").value.trim()||!document.getElementById("imposto").value.trim())set("r-margem","Informe a tarifa e o imposto","big");
     var d=1-t-im-a;set("r-minimo",d>0?brl((c+f+fr+o)/d):"tarifas somam 100% ou mais");
+    function pct(v){return v.toFixed(1).replace(".",",")+"%";}
+    var mv=document.getElementById("meta").value.trim(),m=num("meta")/100,lm=document.getElementById("l-meta");
+    lm.hidden=!mv; if(mv){var dm=d-m;document.getElementById("t-meta").textContent="Preço para "+pct(m*100)+" de margem";set("r-meta",dm>0?brl((c+f+fr+o)/dm):"margem impossível com esses custos");}
+    var tv=document.getElementById("tarifa2").value.trim(),t2=num("tarifa2")/100,lt=document.getElementById("l-t2");
+    lt.hidden=!tv; if(tv){var l2=p-(p*t2+f)-fr-vi-c-vo;document.getElementById("t-t2").textContent="Com tarifa de "+pct(t2*100)+", sobra";set("r-t2",brl(l2)+(p>0?" ("+pct(l2/p*100)+")":""),l2<0?"neg":"");}
   }
   ids.forEach(function(i){document.getElementById(i).addEventListener("input",calc);});
   calc();
@@ -141,6 +153,7 @@ p.sub{color:var(--fg2);font-size:18px;max-width:760px;margin:0}
 </script>
 <script>/* contagem agregada de visitas por página e origem: sem cookies, sem IP, sem dados pessoais */
 try{var o=(new URLSearchParams(location.search).get("origem")||"").replace(/[^a-z0-9_-]/gi,"").slice(0,40);fetch("https://vendaclara-vendas.vendaclara.workers.dev/v?p=calculadora&o="+encodeURIComponent(o),{mode:"no-cors",keepalive:true});
+document.getElementById("dl-planilha").addEventListener("click",function(){fetch("https://vendaclara-vendas.vendaclara.workers.dev/v?p=planilha&o="+encodeURIComponent(o||"calculadora"),{mode:"no-cors",keepalive:true});});
 if(o){var b=document.getElementById("cta-beta");b.href="prelancamento.html?origem=calculadora-"+o.slice(0,28);}}catch(e){}</script>
 </body>
 </html>
