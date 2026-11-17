@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Planilha, assinatura ou VendaClara: controle de lucro no Mercado Livre · VendaClara</title>
+<meta name="description" content="Compare planilha, ferramentas por assinatura e o VendaClara para controlar o lucro de cada venda no Mercado Livre: custo, automação, funções e onde ficam os dados.">
+<link rel="canonical" href="https://www.vendaclara.workers.dev/planilha-ou-ferramenta-lucro-mercado-livre.html">
+<meta property="og:title" content="Planilha, assinatura ou VendaClara: controle de lucro no Mercado Livre"><meta property="og:description" content="Passo a passo para calcular quanto sobra de cada venda no Mercado Livre: tarifa, frete, imposto, custo do produto e embalagem, com exemplo."><meta property="og:type" content="article"><meta property="og:url" content="https://www.vendaclara.workers.dev/planilha-ou-ferramenta-lucro-mercado-livre.html">
+<style>
+:root{--fg:#14171f;--fg2:#4a5160;--fg3:#6b7280;--line:#e3e6ec;--bg:#f6f7f9;--brand:#1a5cff;--brand2:#e8efff;--ok:#127a4a;--okbg:#e6f5ee;--warn:#9a5b00;--warnbg:#fff4e0}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font:17px/1.6 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:#fff;-webkit-font-smoothing:antialiased}
+a{color:var(--brand)}img{max-width:100%;display:block}
+.w{max-width:1120px;margin:0 auto;padding:0 24px}
+header.top{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:5}
+header.top .w{display:flex;align-items:center;gap:18px;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:750;font-size:19px;color:var(--fg);text-decoration:none}
+.logo i{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,#1a5cff,#5aa2ff);display:grid;place-items:center;color:#fff;font-style:normal;font-size:14px}
+nav.m{margin-left:auto;display:flex;gap:22px;font-size:15px}nav.m a{color:var(--fg2);text-decoration:none}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:#fff;font-weight:650;text-decoration:none;padding:13px 22px;border-radius:10px;font-size:16px;border:1px solid var(--brand)}
+.btn:hover{filter:brightness(1.07)}.btn.sec{background:#fff;color:var(--fg);border-color:#cfd4dd}.btn.peq{padding:8px 14px;font-size:14.5px}
+.hero{padding:72px 0 40px;background:linear-gradient(180deg,#f3f6ff 0%,#fff 100%)}
+.hero h1{font-size:48px;line-height:1.1;letter-spacing:-.025em;margin:0 0 18px;max-width:820px}
+.hero p.l{font-size:20px;color:var(--fg2);max-width:720px;margin:0 0 28px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.nota{font-size:14px;color:var(--fg3);margin-top:12px}
+.shot{margin:44px 0 0;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 20px 50px rgba(20,30,60,.12)}
+.shot figcaption,.cap{font-size:13.5px;color:var(--fg3);padding:10px 14px;background:#fafbfc;border-top:1px solid var(--line)}
+section{padding:72px 0}section.alt{background:var(--bg)}
+h2{font-size:34px;line-height:1.2;letter-spacing:-.02em;margin:0 0 14px}h3{font-size:19px;margin:0 0 6px}
+.sub{color:var(--fg2);font-size:18px;max-width:760px;margin:0 0 36px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.g2{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px}
+.card p{margin:0;color:var(--fg2);font-size:16px}
+.num{font-size:13px;font-weight:700;color:var(--brand);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.cl{display:inline-block;font-size:13px;font-weight:700;border-radius:6px;padding:2px 9px;margin-bottom:10px}
+.cl.m{background:#e6f5ee;color:#0b5c37}.cl.e{background:#e8efff;color:#1747c2}.cl.h{background:#f1f2f5;color:#5b6272;border:1px dashed #c4c9d3}
+ul.ok{list-style:none;padding:0;margin:0}ul.ok li{padding:7px 0 7px 30px;position:relative;color:var(--fg2)}ul.ok li:before{content:"✓";position:absolute;left:4px;color:var(--ok);font-weight:800}
+ul.nao li:before{content:"–";color:var(--fg3)}
+.preco{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:stretch}
+.box{border:2px solid var(--brand);border-radius:16px;padding:32px;background:#fff}
+.valor{font-size:56px;font-weight:800;letter-spacing:-.03em;line-height:1}.valor small{font-size:18px;font-weight:600;color:var(--fg3);letter-spacing:0}
+.comp{border:1px solid var(--line);border-radius:16px;padding:28px;background:var(--bg)}
+.comp table{width:100%;border-collapse:collapse;font-size:15.5px}.comp td{padding:10px 0;border-bottom:1px solid var(--line)}.comp td:last-child{text-align:right;font-weight:650;font-variant-numeric:tabular-nums}
+details{border-bottom:1px solid var(--line);padding:16px 0}summary{cursor:pointer;font-weight:650;font-size:17px}details p{color:var(--fg2);margin:10px 0 0}
+footer{padding:40px 0;border-top:1px solid var(--line);font-size:14px;color:var(--fg3)}footer .w{display:flex;gap:24px;flex-wrap:wrap}
+.selo{display:inline-flex;gap:8px;align-items:center;background:var(--okbg);color:var(--ok);font-weight:650;font-size:14px;border-radius:20px;padding:5px 12px;margin-bottom:18px}
+@media(max-width:860px){.hero h1{font-size:34px}.g3,.g2,.preco{grid-template-columns:1fr}nav.m{display:none}h2{font-size:27px}section{padding:52px 0}}
+</style>
+<style>
+.art{max-width:760px;margin:0 auto;padding:28px 20px 60px}.art h1{font-size:34px;line-height:1.2;margin:14px 0 10px}.art h2{font-size:23px;margin:32px 0 8px}
+.art p,.art li{color:var(--fg2);font-size:17px}.art table{width:100%;border-collapse:collapse;margin:12px 0;font-size:16px}.art td,.art th{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left}.art td.r,.art th.r{text-align:right}
+.art .ex{background:var(--bg);border-radius:12px;padding:14px 16px;font-size:15.5px}.art .cta{border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:30px 0;background:#fff}
+.art .formula{background:#0b142c;color:#fff;border-radius:12px;padding:14px 16px;font-family:ui-monospace,Consolas,monospace;font-size:15px}
+</style>
+</head>
+<body>
+<div class="art">
+<p><a href="index.html">◆ VendaClara</a> · <a href="calculadora.html?origem=guia-comparacao">Calculadora grátis</a></p>
+<h1>Planilha, ferramenta por assinatura ou VendaClara: como controlar o lucro no Mercado Livre</h1>
+<p class="nota" style="font-size:14px;margin:0">Atualizado em 17/11/2026</p>
+<div class="ex" style="border-left:4px solid var(--brand);margin:14px 0"><b>Resposta rápida:</b> a planilha é grátis, mas depende de você copiar tarifa e frete de cada venda. Ferramentas por assinatura fazem isso sozinhas e costumam trazer muito mais funções, com mensalidade. O VendaClara faz só a conta do lucro por pedido, com pagamento único.</div>
+<h2>Comparação</h2>
+<table><tr><th></th><th>Planilha</th><th>Ferramenta por assinatura</th><th>VendaClara</th></tr>
+<tr><td>Custo</td><td>Grátis</td><td>Mensalidade; muitas sobem de faixa com o número de pedidos</td><td>Pagamento único; o preço não muda com o volume</td></tr>
+<tr><td>Tarifa e frete de cada venda</td><td>Você copia do Mercado Livre</td><td>Automático</td><td>Automático, pela integração oficial do Mercado Livre</td></tr>
+<tr><td>Custo do produto e imposto</td><td>Você informa</td><td>Você informa</td><td>Você informa</td></tr>
+<tr><td>Outras funções (anúncios, nota fiscal, vários marketplaces)</td><td>Não</td><td>Em geral, sim</td><td>Não: foco no lucro de cada pedido no Mercado Livre</td></tr>
+<tr><td>Onde ficam os dados</td><td>No seu arquivo</td><td>Nos servidores da empresa</td><td>No seu computador (Windows)</td></tr></table>
+<h2>Quando cada opção faz sentido</h2>
+<ul>
+<li><b>Planilha:</b> poucas vendas por mês e tempo para conferir pedido por pedido. Comece pela nossa <a href="img/conferir-5-pedidos-mercado-livre.xlsx" download>planilha grátis "Confira 5 pedidos"</a>.</li>
+<li><b>Ferramenta por assinatura:</b> você precisa de gestão completa (anúncios, estoque, nota fiscal, vários canais) e a mensalidade cabe na margem.</li>
+<li><b>VendaClara:</b> você quer saber o lucro real de cada pedido e de cada anúncio sem montar planilha e sem mensalidade.</li>
+</ul>
+<p>O VendaClara está em beta gratuito e os cálculos ainda estão em validação com vendedores reais: por isso pedimos que cada participante confira 5 pedidos com o relatório do Mercado Livre.</p>
+<div class="cta"><p style="margin-top:0"><b>Faça a conta com os seus números.</b> A calculadora gratuita simula quanto sobra de uma venda, sem cadastro e sem instalar nada.</p>
+<p style="margin-bottom:0"><a class="btn" href="calculadora.html?origem=guia-comparacao">Abrir a calculadora</a></p></div>
+<p>Quer essa conta para todos os seus pedidos, com a tarifa e o frete de cada venda? O VendaClara, programa para Windows, faz isso lendo suas vendas pela integração oficial do Mercado Livre e está em <b>beta gratuito</b>. <a href="prelancamento.html?origem=guia-comparacao">Quero participar do beta</a>.</p>
+<p><b>Planilha grátis:</b> confira 5 pedidos reais e veja se o repasse do ML bate com a conta. <a href="img/conferir-5-pedidos-mercado-livre.xlsx" download onclick="try{fetch('https://vendaclara-vendas.vendaclara.workers.dev/v?p=planilha&amp;o=guia',{mode:'no-cors',keepalive:true})}catch(e){}">Baixar a planilha (Excel)</a> · Dicas de margem no Instagram: <a href="https://www.instagram.com/vendaclara.app/" rel="noopener">@vendaclara.app</a></p>
+<p class="nota" style="font-size:14px">Os exemplos desta página são hipotéticos, com números escolhidos para ilustrar a conta. Tarifas e custos de envio mudam com o tempo, a categoria e a sua conta: confira sempre os valores do seu anúncio no Mercado Livre e o imposto com o seu contador. Guias: <a href="lucro-por-venda-mercado-livre.html">lucro por venda</a> · <a href="tarifas-e-frete-margem-mercado-livre.html">tarifas e frete</a> · <a href="vendas-com-prejuizo-mercado-livre.html">vendas com prejuízo</a> · <a href="planilha-ou-ferramenta-lucro-mercado-livre.html">planilha ou ferramenta?</a>.</p>
+</div>
+<script>/* contagem agregada de visitas por página e origem: sem cookies, sem IP, sem dados pessoais */
+try{var o=(new URLSearchParams(location.search).get("origem")||"").replace(/[^a-z0-9_-]/gi,"").slice(0,40);fetch("https://vendaclara-vendas.vendaclara.workers.dev/v?p=guia-comparacao&o="+encodeURIComponent(o),{mode:"no-cors",keepalive:true});}catch(e){}</script>
+</body>
+</html>
