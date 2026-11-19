@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <link rel="canonical" href="https://www.vendaclara.workers.dev/calculadora.html">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Calculadora de lucro por venda no Mercado Livre · VendaClara</title>
-<meta name="description" content="Simule grátis quanto sobra de uma venda no Mercado Livre: preço, tarifa, frete, imposto e custo do produto. Sem cadastro e sem instalar nada.">
+<title>Calculadora Mercado Livre: taxa, frete e lucro de cada venda (grátis) · VendaClara</title>
+<meta name="description" content="Calculadora do Mercado Livre grátis: veja quanto a taxa e o frete descontam, quanto sobra da venda depois de imposto e custo, o preço mínimo e o preço para a margem que você quer. Sem cadastro.">
 <style>
 :root{--fg:#14171f;--fg2:#4a5160;--fg3:#6b7280;--line:#e3e6ec;--bg:#f6f7f9;--brand:#1a5cff;--brand2:#e8efff;--ok:#127a4a;--okbg:#e6f5ee;--warn:#9a5b00;--warnbg:#fff4e0}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font:17px/1.6 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:#fff;-webkit-font-smoothing:antialiased}
@@ -76,8 +76,8 @@ p.sub{color:var(--fg2);font-size:18px;max-width:760px;margin:0}
 </div></header>
 
 <main class="w">
-  <h1 class="t">Calculadora de lucro por venda no Mercado Livre</h1>
-  <p class="sub">Simule quanto sobra de uma venda depois da tarifa, do frete, do imposto e do custo do produto. Grátis, sem cadastro e sem instalar nada. Nada do que você digita sai do seu navegador.</p>
+  <h1 class="t">Calculadora Mercado Livre: quanto sobra de cada venda</h1>
+  <p class="sub">Simule quanto sobra de uma venda depois da taxa do Mercado Livre, do frete, do imposto e do custo do produto, e descubra o preço para a margem que você quer. Grátis, sem cadastro e sem instalar nada. Nada do que você digita sai do seu navegador.</p>
 
   <div class="calc">
     <div class="cx">
@@ -85,7 +85,7 @@ p.sub{color:var(--fg2);font-size:18px;max-width:760px;margin:0}
       <div class="campo"><label for="preco">Preço de venda</label><div class="in"><span>R$</span><input id="preco" inputmode="decimal" value="49,90"></div></div>
       <div class="campo"><label for="custo">Custo do produto<small>quanto você paga ou gasta para produzir</small></label><div class="in"><span>R$</span><input id="custo" inputmode="decimal" value="18,00"></div></div>
       <div class="campo"><label for="tarifa">Tarifa de venda (%)<small>confira a porcentagem do seu anúncio no Mercado Livre</small></label><div class="in"><input id="tarifa" inputmode="decimal" value="" placeholder="ex.: 14"><span>%</span></div></div>
-      <div class="campo"><label for="fixa">Tarifa fixa por unidade<small>se o seu anúncio tiver (comum em itens baratos)</small></label><div class="in"><span>R$</span><input id="fixa" inputmode="decimal" value="0"></div></div>
+      <div class="campo"><label for="fixa">Custo fixo por unidade<small>valor em reais cobrado além da porcentagem, se aparecer no seu anúncio ou no simulador da sua conta</small></label><div class="in"><span>R$</span><input id="fixa" inputmode="decimal" value="0"></div></div>
       <div class="campo"><label for="frete">Frete pago por você<small>o valor que sai do seu bolso nesta venda</small></label><div class="in"><span>R$</span><input id="frete" inputmode="decimal" value="0"></div></div>
       <div class="campo"><label for="imposto">Imposto sobre a venda (%)<small>a alíquota do seu regime; confirme com o contador</small></label><div class="in"><input id="imposto" inputmode="decimal" value="" placeholder="ex.: 6"><span>%</span></div></div>
       <div class="campo"><label for="outros">Embalagem e outros custos<small>opcional</small></label><div class="in"><span>R$</span><input id="outros" inputmode="decimal" value="0"></div></div>
@@ -120,6 +120,11 @@ p.sub{color:var(--fg2);font-size:18px;max-width:760px;margin:0}
     <p class="nota">Dicas de margem toda semana no Instagram: <a href="https://www.instagram.com/vendaclara.app/" rel="noopener">@vendaclara.app</a></p>
     <p class="nota" style="margin-top:14px">Entenda a conta: <a href="lucro-por-venda-mercado-livre.html">como calcular o lucro de uma venda</a> · <a href="tarifas-e-frete-margem-mercado-livre.html">tarifas e frete</a> · <a href="vendas-com-prejuizo-mercado-livre.html">vendas com prejuízo</a> · <a href="planilha-ou-ferramenta-lucro-mercado-livre.html">planilha ou ferramenta?</a></p>
   </section>
+  <section class="faq" style="max-width:760px;margin:0 0 48px">
+    <h2>Perguntas frequentes</h2>
+    <h3>Quanto o Mercado Livre cobra por venda?</h3><p>A tarifa de venda é uma porcentagem do preço que depende do tipo de anúncio e da categoria. Segundo a Central de Ajuda do Mercado Livre, ela fica entre 10% e 14% no anúncio Clássico e entre 15% e 19% no Premium. Além dela, pode haver custo de envio e, em alguns itens, um valor em reais por unidade. A porcentagem exata do seu produto aparece no anúncio e no simulador de custos da sua conta.</p><h3>Esta é a calculadora oficial do Mercado Livre?</h3><p>Não. O Mercado Livre tem um simulador de custos dentro da conta do vendedor, com a tarifa da sua categoria. Esta calculadora é independente e acrescenta o que o simulador não pergunta: imposto, custo do produto, embalagem e publicidade, para mostrar quanto sobra de verdade.</p><h3>Como calcular o preço de venda para ter a margem que eu quero?</h3><p>Some os custos em reais (produto, frete, embalagem e custo fixo, se houver) e divida por 1 menos a soma das porcentagens (tarifa, imposto, publicidade e a margem desejada). Preencha o campo &quot;Margem que você quer&quot; e a calculadora faz essa conta.</p><h3>O que eu digito fica salvo?</h3><p>Não. A conta é feita no seu navegador e nada do que você digita é enviado ou guardado.</p>
+  </section>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Quanto o Mercado Livre cobra por venda?", "acceptedAnswer": {"@type": "Answer", "text": "A tarifa de venda é uma porcentagem do preço que depende do tipo de anúncio e da categoria. Segundo a Central de Ajuda do Mercado Livre, ela fica entre 10% e 14% no anúncio Clássico e entre 15% e 19% no Premium. Além dela, pode haver custo de envio e, em alguns itens, um valor em reais por unidade. A porcentagem exata do seu produto aparece no anúncio e no simulador de custos da sua conta."}}, {"@type": "Question", "name": "Esta é a calculadora oficial do Mercado Livre?", "acceptedAnswer": {"@type": "Answer", "text": "Não. O Mercado Livre tem um simulador de custos dentro da conta do vendedor, com a tarifa da sua categoria. Esta calculadora é independente e acrescenta o que o simulador não pergunta: imposto, custo do produto, embalagem e publicidade, para mostrar quanto sobra de verdade."}}, {"@type": "Question", "name": "Como calcular o preço de venda para ter a margem que eu quero?", "acceptedAnswer": {"@type": "Answer", "text": "Some os custos em reais (produto, frete, embalagem e custo fixo, se houver) e divida por 1 menos a soma das porcentagens (tarifa, imposto, publicidade e a margem desejada). Preencha o campo \"Margem que você quer\" e a calculadora faz essa conta."}}, {"@type": "Question", "name": "O que eu digito fica salvo?", "acceptedAnswer": {"@type": "Answer", "text": "Não. A conta é feita no seu navegador e nada do que você digita é enviado ou guardado."}}]}</script>
 </main>
 
 <footer><div class="w">
