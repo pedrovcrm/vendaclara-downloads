@@ -133,25 +133,26 @@ p.sub{color:var(--fg2);font-size:18px;max-width:760px;margin:0}
   <span>VendaClara não é afiliado ao Mercado Livre. Mercado Livre é marca de seus titulares.</span>
 </div></footer>
 
+<script src="calculo.js"></script>
 <script>
 (function(){
-  var ids=["preco","custo","tarifa","fixa","frete","imposto","outros","ads","meta","tarifa2"];
-  function num(id){var v=(document.getElementById(id).value||"").trim().replace(/\s/g,"");if(v.indexOf(",")>=0)v=v.replace(/\./g,"").replace(",",".");var n=parseFloat(v);return isFinite(n)?n:0;}
-  function brl(v){return (v<0?"− ":"")+"R$ "+Math.abs(v).toFixed(2).replace(".",",").replace(/\B(?=(\d{3})+(?!\d))/g,".");}
+  var C=window.VendaClaraCalculo, ids=["preco","custo","tarifa","fixa","frete","imposto","outros","ads","meta","tarifa2"];
+  function val(id){return document.getElementById(id).value;}
+  function num(id){return C.numero(val(id));}
   function set(id,t,c){var e=document.getElementById(id);e.textContent=t;e.className=c||"";}
   function calc(){
-    var p=num("preco"),c=num("custo"),t=num("tarifa")/100,f=num("fixa"),fr=num("frete"),im=num("imposto")/100,o=num("outros"),a=num("ads")/100;
-    var vt=p*t+f,vi=p*im,vo=o+p*a,l=p-vt-fr-vi-c-vo;
-    set("r-preco",brl(p));set("r-tarifa",brl(-vt));set("r-frete",brl(-fr));set("r-imposto",brl(-vi));set("r-custo",brl(-c));set("r-outros",brl(-vo));
+    var mv=val("meta").trim(), tv=val("tarifa2").trim();
+    var r=C.calcular({preco:num("preco"),custo:num("custo"),tarifa:num("tarifa"),fixa:num("fixa"),frete:num("frete"),imposto:num("imposto"),outros:num("outros"),ads:num("ads"),meta:mv?num("meta"):null,tarifa2:tv?num("tarifa2"):null});
+    var brl=C.brl,pct=C.pct,l=r.sobra,p=r.preco;
+    set("r-preco",brl(p));set("r-tarifa",brl(-r.tarifaValor));set("r-frete",brl(-r.frete));set("r-imposto",brl(-r.impostoValor));set("r-custo",brl(-r.custo));set("r-outros",brl(-r.outrosValor));
     set("r-lucro",brl(l),l<0?"neg":"pos");
-    set("r-margem",p>0?(l/p*100).toFixed(1).replace(".",",")+"% do preço":"—",l<0?"big neg":"big pos");
-    if(!document.getElementById("tarifa").value.trim()||!document.getElementById("imposto").value.trim())set("r-margem","Informe a tarifa e o imposto","big");
-    var d=1-t-im-a;set("r-minimo",d>0?brl((c+f+fr+o)/d):"tarifas somam 100% ou mais");
-    function pct(v){return v.toFixed(1).replace(".",",")+"%";}
-    var mv=document.getElementById("meta").value.trim(),m=num("meta")/100,lm=document.getElementById("l-meta");
-    lm.hidden=!mv; if(mv){var dm=d-m;document.getElementById("t-meta").textContent="Preço para "+pct(m*100)+" de margem";set("r-meta",dm>0?brl((c+f+fr+o)/dm):"margem impossível com esses custos");}
-    var tv=document.getElementById("tarifa2").value.trim(),t2=num("tarifa2")/100,lt=document.getElementById("l-t2");
-    lt.hidden=!tv; if(tv){var l2=p-(p*t2+f)-fr-vi-c-vo;document.getElementById("t-t2").textContent="Com tarifa de "+pct(t2*100)+", sobra";set("r-t2",brl(l2)+(p>0?" ("+pct(l2/p*100)+")":""),l2<0?"neg":"");}
+    set("r-margem",r.margem!==null?pct(r.margem*100)+" do preço":"—",l<0?"big neg":"big pos");
+    if(!val("tarifa").trim()||!val("imposto").trim())set("r-margem","Informe a tarifa e o imposto","big");
+    set("r-minimo",r.minimo!==null?brl(r.minimo):"tarifas somam 100% ou mais");
+    var lm=document.getElementById("l-meta");lm.hidden=!mv;
+    if(mv){document.getElementById("t-meta").textContent="Preço para "+pct(num("meta"))+" de margem";set("r-meta",r.precoMeta!==null?brl(r.precoMeta):"margem impossível com esses custos");}
+    var lt=document.getElementById("l-t2");lt.hidden=!tv;
+    if(tv){var l2=r.sobraTarifa2;document.getElementById("t-t2").textContent="Com tarifa de "+pct(num("tarifa2"))+", sobra";set("r-t2",brl(l2)+(p>0?" ("+pct(l2/p*100)+")":""),l2<0?"neg":"");}
   }
   ids.forEach(function(i){document.getElementById(i).addEventListener("input",calc);});
   calc();
