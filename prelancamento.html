@@ -125,6 +125,13 @@ footer{padding:40px 0;border-top:1px solid var(--line);font-size:14px;color:var(
 <script>
   // origem da visita (ex.: ?origem=instagram) para medir qual canal trouxe interessados; nenhum dado pessoal
   try { var o = new URLSearchParams(location.search).get("origem"); if (o) document.getElementById("origem").value = o.replace(/[^a-z0-9_-]/gi, "").slice(0, 40); } catch (e) {}
+  // quem chegou por um botão "participar do beta" já vem com a opção do beta marcada (pode desmarcar)
+  try {
+    var cb = document.querySelector('input[name="beta"]'), bt = document.querySelector('#lista button[type="submit"]');
+    function rotulo(){ bt.textContent = cb.checked ? "Quero participar do beta" : "Quero ser avisado"; }
+    if (new URLSearchParams(location.search).get("beta") === "1") cb.checked = true;
+    cb.addEventListener("change", rotulo); rotulo();
+  } catch (e) {}
 </script>
 <script>/* contagem agregada de visitas por página e origem: sem cookies, sem IP, sem dados pessoais */
 try{var o=(new URLSearchParams(location.search).get("origem")||"").replace(/[^a-z0-9_-]/gi,"").slice(0,40);fetch("https://vendaclara-vendas.vendaclara.workers.dev/v?p=prelancamento&o="+encodeURIComponent(o),{mode:"no-cors",keepalive:true});}catch(e){}</script>
